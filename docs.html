@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>czRadio jQuery plugin Description</title>
+<style type="text/css">
+	body {padding:10px; margin:0; font-family:Arial; font-size:12px; text-align:center;}
+	h1, h2, h3, h4{font-weight:400; margin:0; padding:0;}
+	h1 {font-size:36px; font-family:Gautami; font-weight:bold; font-style:italic; border-bottom:5px solid #eeeeee; }
+	h2 {font-size:24px;}
+	h3 {font-size:18px; padding-top:10px; line-height:24px;}
+	h4 {font-size:14px;}
+	dl, ul, ol, p { margin:0; padding:0; font-size:12px; line-height:24px;}
+	p {font-style:italic;}
+	li {margin-left:30px;}
+	a {color:#979797; text-decoration:none;}
+	a:hover {text-decoration:underline;}
+	pre {font-family:Verdana; font-size:12px; line-height:30px; color:#3076be; background-color:#dddddd; width:95%; border:1px dashed #c9c9c9; margin-top:0.5em; padding:15px;}
+	#docs{text-align:left; margin:0 auto; width:1000px;}
+	.wrap { padding-bottom:20px;}
+	ul.install {padding-left:70px;list-style:none;}
+	dl.options {padding-left:100px;}
+	dl.options dt, dl.options dd { margin:0; padding:0; line-height:24px; width:600px;}
+	dl.options dt {background-color:#dddddd; padding:0px 10px; height:24px; }
+	dl.options dt strong {float:left;}
+	dl.options dt i {float:right;}
+	dl.options dd { padding:2px 10px;}
+</style>
+</head>
+
+<body>
+<div id="docs">
+    <h1>czRadio jQuery plugin</h1>
+    <h3>Introduction</h3>
+    <p><a href="http://code.google.com/p/czui/">czRadio</a> is a <a href="http://jquery.com">jQuery</a> plugin that allows you to turn default browser radio into much more attractive.  </p>
+    
+    <p class="wrap">The plugin is usable not only for end users, but also for developers. czRadio has a lot of configuration options so you can modify its behaviour and appearance. From this version the core CSS file is separated from the CSS that provides radio's appearance, and now you are able to easily create new skins for the plugin.</p>
+    
+	<h3>Examples</h3>
+    <p class="wrap">Please view <a href="../../demos/czRadio/demo.html">demo page</a> to see the possibilities of <em>czRadio</em>.</p>
+    
+    <h3>Installation</h3>
+    <p>Please follow these instructions to install czRadio:</p>
+	<ul class="install wrap">
+        <li><a href="http://code.google.com/p/czui/downloads/list">Download</a> and unpack the archive.</li>
+		<li>Include jQuery and plugin files to your web page:
+        	<pre>&lt;script type="text/javascript" src="/js/jquery-1.4.2.min.js"&gt;&lt;/script&gt;<br />&lt;script type="text/javascript" src="/js/jquery.czRadio.js"&gt;&lt;/script&gt;</pre>
+		</li>
+		<li>Include core or your skin CSS files to your page:
+        	<pre>
+&lt;link rel="stylesheet" type="text/css" href="images/style.css" /&gt;<br />&lt;link rel="stylesheet" type="text/css" href="images/skin_name.css" /&gt;</pre>
+		</li>
+        <li>Done! Now make your radios look and behave sexy!
+        	<pre>$("#radiolist").czRadio();
+$("#list").czRadio({
+    changeCallback: function(){
+        alert('changed')
+    }
+});</pre>
+  		</li>
+	</ul> 
+         
+    <h3>Usage and configuration options</h3>
+    <p><em>czRadio</em> has a number of configuration options that are passed to the plugin in the form of JavaScript object.</p>			
+    <p>The full list of options is:</p>
+    
+    <dl class="options wrap">
+    	<dt><strong>className</strong> <i>String, Default: null</i></dt>
+    	<dd>The class name of radio list wrap.</dd>
+    	<dt><strong>inputName</strong> <i>String, Default: null</i></dt>
+    	<dd>The name of radio you need.</dd>
+		<dt><strong>initCallback</strong> <i>Funtion, Default: null</i></dt>
+    	<dd>function that is called at the end of constrictor.</dd>
+        <dt><strong>forbidCallback</strong> <i>Funtion, Default: null</i></dt>
+    	<dd>function that is called when the disabled radio is selected.</dd>
+        <dt><strong>changeCallback</strong> <i>Funtion, Default: null</i></dt>
+    	<dd>function that is called when the selection of radio is changed.</dd>
+    </dl>
+    
+    <p class="wrap">In this version I have separated core CSS and presentational CSS, so now it's possible to create new skins for <em>czRadio</em>. The download package contains one example skin. Feel free to create your own based on it.</p>
+    
+    <h3>Browser compatibility</h3>
+    <p><em>czRadio</em> has been tested and works on the following browsers:</p>
+    <ul class="wrap">
+        <li>Internet Explorer 6.0 +</li>
+        <li>Chrome</li>
+        <li>Firefox</li>
+        <li>Opera</li>
+    </ul>
+    
+    <h3>Support project</h3>
+    <p>Every user of <em>czRadio</em> adds some value to it, so you help me by just using it. However, if you want to help more, you can do the following:</p>
+    <ul class="wrap">
+        <li>Tell the world about <em>czRadio</em>. You can write an atricle or a blog post about it or just tell your friends/collegues about it.</li>
+        <li>Test it on browsers that are not currently supported "officially".</li>
+        <li>Report a bug.</li>
+        <li>If you are web designer/developer, I will be glad to collaborate with you. If you have some suggestions on design/programming, feel free to email me at Kadalashvili at Vladimir at gmail dot com.</li>
+    </ul>
+    <p>Please don't donate money, it's needless.</p>
+ 
+    <h3>Resources</h3>
+    <ul class="wrap">
+      	<li><a href="http://code.google.com/p/czui/source/checkout">czRadio</a> on the Google Code</li>
+    </ul>
+</div>
+</body>
+</html>

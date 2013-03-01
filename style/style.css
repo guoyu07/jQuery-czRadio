@@ -1,0 +1,5 @@
+.czRadio span.default {background-image: url('bg.gif') ; background-repeat:no-repeat; background-position:0 0; height:29px; width:29px; float: left;} 
+.czRadio span.default_checked {background-position:0 -29px;  } 
+.czRadio span.disabled{background-position:0 -58px;}
+.czRadio span.disabled_checked{background-position:0 -87px;}
+.czRadio label.default {display: block; float: left; height: 29px; line-height: 29px; padding:0 20px;}

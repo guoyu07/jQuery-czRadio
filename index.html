@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Lancer" />
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.czRadio.js"></script>
+    <link rel="stylesheet" href="http://im.crackedzone.com/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <title>czRadio Demo</title>
+</head>
+
+<body>
+<div class="container">
+<div class="page-header">
+    <h3>Demo 1: Please choose your favorite hobby(Only one)</h3>
+</div>
+<form class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label" for="country-1">Hobby:</label>
+        <div class="controls" id="radio-group-1">
+            <div class="clearfix">
+                <input type="radio" id="Football" value="football" name="Hobby" > 
+                <label for="Football">Football</label>
+            </div>
+            <div class="clearfix">
+                <input type="radio" id="Volleyball" value="volleyball" name="Hobby" > <label for="Volleyball">Volleyball</label>
+            </div>
+            <div class="clearfix">
+                <input type="radio" id="Basketball" value="basketball" name="Hobby" > <label for="Basketball">Basketball</label>
+            </div>
+            <div class="clearfix">
+                <input type="radio" id="Swimming" value="swimming" name="Hobby" > 
+                <label for="Swimming">Swimming</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <button type="button" class="btn" onclick="alert($('#radio-group-1').czRadio('instance').getCheckedValue())">Get Checked Value</button>
+            <button type="button" class="btn" onclick="alert($('#radio-group-1').czRadio('instance').getCheckedText())">Get Checked Text</button>
+
+            <button type="button" class="btn" onclick="$('#radio-group-1').czRadio('instance').setChecked('volleyball');">Check Volleyball</button>
+            <button type="button" class="btn" onclick="$('#radio-group-1').czRadio('instance').setAbled('volleyball');">Enabled Volleyball </button>
+            <button type="button" class="btn" onclick="$('#radio-group-1').czRadio('instance').setDisabled('volleyball');">Disabled Volleyball</button>
+        </div>
+    </div>
+</form>
+
+<div class="page-header">
+    <h3>Demo 2: Choose your most mastery of the language</h3>
+</div>
+<form class="form-horizontal">
+    <div class="control-group">
+        <label class="control-label" for="country-1">Mastery Language:</label>
+        <div class="controls" id="radio-group-2">
+            <div class="clearfix">
+                <input type="Radio" id="English" value="EN" name="language" />
+                <label for="English">English</label>
+                <input type="Radio" id="German" value="GE" name="language" />
+                <label for="German">German</label>
+                <input type="Radio" id="French" value="FR" name="language" />
+                <label for="French">French</label>
+                <input type="Radio" id="Japanese" value="JP" name="language" />
+                <label for="Japanese">Japanese</label>
+            </div>
+            <div class="clearfix">
+                <input type="Radio" id="Chinese" value="ZH" name="language" />
+                <label for="Chinese">Chinese</label>
+                <input type="Radio" id="Korean" value="KR" name="language" />
+                <label for="Korean">Korean</label>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button id="setGerman" type="button" class="btn" id="setLanguage">Checked German</button>
+            <button id="setKorean" type="button" class="btn" id="setLanguage">Checked Korean</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    $('#radio-group-1').czRadio({
+        initCallback: function() {  
+            log( 'init successfully.' );    
+        },
+        forbidCallback: function() {
+            log( this.getValue() + ' is not allow checked.');
+        },
+        changeCallback: function() {       
+            log( 'change: ' + this.getCheckedValue() + ' is checked.');
+        }
+    });
+
+        
+    $('#radio-group-2').czRadio({
+        inputName : 'language',
+        changeCallback: function() {       
+            alert( 'change: ' + this.getCheckedValue() + ' is checked.');
+        }
+    });
+  
+    $("#setGerman").bind('click', function() {
+        $('#radio-group-2').czRadio('instance').setChecked($('#German'));
+    });
+        
+    $("#setKorean").bind('click', function() {
+        $('#radio-group-2').czRadio('instance').setChecked('KR');
+    });
+
+    function log($message) {
+        var debug = true;
+        if ( debug ) {
+            if (window.console && window.console.log)
+                window.console.log($message);
+            else
+                alert($message);
+        } else {
+            alert($message);
+        } 
+    }
+</script>
+</body>
+</html>
