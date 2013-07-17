@@ -90,7 +90,8 @@
 
                 //set label which checkbox has.
                 $label = $("label[for='" + _that._$radios[item].attr('id') + "']");
-                if ( typeof $label == 'object' && $label.attr('tagName') == 'LABEL') {
+
+                if ( typeof $label == 'object' && $label.get(0).tagName.toUpperCase() == 'LABEL') {                
                     _that._$labels[item] = $label.removeAttr('for').css('cursor', 'pointer').addClass('default');
                 } else {
                     _that._$labels[item] = null;
